@@ -22,11 +22,10 @@ df <- as.data.frame(df)
 # Change column name to "basename"
 names(df) <- "basename"
 
-# Set working directory
-setwd("/Volumes/nottermanlab/Gillian Hilscher/GA Study/Methylation Datasets/G954_EPIC_Data_0217/Processing/03-22-23")
-
 # Create RGChannelSetExtended
 rg<-read.metharray(basenames=df$basename,extended=T)
+# Set working directory
+setwd("/Volumes/nottermanlab/Gillian Hilscher/GA Study/Methylation Datasets/G954_EPIC_Data_0217/Processing/03-22-23")
 saveRDS(rg,file="G954_EPIC_Data_0217rgsetext.RDS")
 
 # Attach metadata for later use
